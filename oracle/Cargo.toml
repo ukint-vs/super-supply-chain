@@ -1,0 +1,12 @@
+[workspace]
+resolver = "2"
+members = [
+    "oracle",
+    "io",
+    "state",
+    "randomness-oracle",
+    "randomness-oracle-io",
+    "randomness-oracle-state",
+    "roll-dice-example",
+    "horse-races"
+]
