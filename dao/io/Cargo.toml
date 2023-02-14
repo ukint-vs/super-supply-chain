@@ -1,5 +1,5 @@
 [package]
-name = "dao-light-io"
+name = "dao-io"
 version = "0.1.0"
 edition = "2021"
 authors = ["Gear Technologies"]

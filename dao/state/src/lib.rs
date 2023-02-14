@@ -1,6 +1,6 @@
 #![no_std]
 
-use dao_light_io::*;
+use dao_io::*;
 use gmeta::{metawasm, Metadata};
 use gstd::{prelude::*, ActorId};
 

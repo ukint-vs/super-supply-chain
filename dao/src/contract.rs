@@ -1,5 +1,5 @@
 use crate::ft_messages::*;
-use dao_light_io::*;
+use dao_io::*;
 use gstd::{exec, msg, prelude::*, ActorId, String};
 use hashbrown::HashMap;
 

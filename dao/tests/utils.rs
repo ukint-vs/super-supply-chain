@@ -1,4 +1,4 @@
-use dao_light_io::*;
+use dao_io::*;
 use ft_io::*;
 use gtest::{Program, RunResult, System};
 
