@@ -726,7 +726,7 @@ extern "C" fn meta_state() -> *mut [i32; 2] {
         StateQuery::FungibleToken => StateReply::FungibleToken(state.fungible_token),
         StateQuery::NonFungibleToken => StateReply::NonFungibleToken(state.non_fungible_token),
         StateQuery::Oracle => StateReply::Oracle(state.oracle),
-        StateQuery::Dao => StateReply::Dao(state.dao),
+        StateQuery::DAO => StateReply::DAO(state.dao),
         StateQuery::IsActionCached(actor, action) => {
             StateReply::IsActionCached(state.is_action_cached(actor, action))
         }

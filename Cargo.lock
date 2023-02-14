@@ -876,6 +876,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "dao-io"
+version = "0.1.0"
+dependencies = [
+ "gmeta",
+ "gstd",
+ "parity-scale-codec",
+ "scale-info",
+]
+
+[[package]]
 name = "darling"
 version = "0.14.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5941,6 +5951,7 @@ dependencies = [
 name = "supply-chain"
 version = "0.2.0"
 dependencies = [
+ "dao-io",
  "ft-logic-io",
  "ft-main-io",
  "gclient",
