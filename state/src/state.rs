@@ -34,6 +34,10 @@ pub trait Metawasm {
         state.oracle
     }
 
+    fn dao(state: Self::State) -> ActorId {
+        state.dao
+    }
+
     fn is_action_cached(actor_action: ActorIdInnerSupplyChainAction, state: Self::State) -> bool {
         let (actor, action) = actor_action;
 

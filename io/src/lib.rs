@@ -29,6 +29,7 @@ pub struct State {
     pub fungible_token: ActorId,
     pub non_fungible_token: ActorId,
     pub oracle: ActorId,
+    pub dao: ActorId,
 
     /// Used by [`StateQuery::IsActionCached`]. Also see [`TransactionKind`].
     pub cached_actions: Vec<(ActorId, CachedAction)>,
@@ -151,6 +152,8 @@ pub struct Initialize {
     pub non_fungible_token: ActorId,
     /// An Oracle contract [`ActorId`].
     pub oracle: ActorId,
+    /// An Dao contract [`ActorId`].
+    pub dao: ActorId,
 }
 
 /// Sends the contract info about what it should do.
@@ -614,6 +617,7 @@ pub enum StateQuery {
     FungibleToken,
     NonFungibleToken,
     Oracle,
+    DAO,
     IsActionCached(ActorId, InnerAction),
 }
 
@@ -625,6 +629,7 @@ pub enum StateReply {
     FungibleToken(ActorId),
     NonFungibleToken(ActorId),
     Oracle(ActorId),
+    DAO(ActorId),
     ExistingItems(Vec<(ItemId, ItemInfo)>),
     Roles(Vec<Role>),
     IsActionCached(bool),

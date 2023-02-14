@@ -1,5 +1,6 @@
 use crate::contract::tx_manager::TransactionGuard;
 use oracle_io::{Action as OracleAction, Event as OracleEvent};
+use dao_io::{Action as DaoAction, Event as DaoEvent};
 use ft_logic_io::Action as FTLAction;
 use ft_main_io::{FTokenAction, FTokenEvent};
 use gear_lib::non_fungible_token::{
@@ -88,6 +89,7 @@ pub async fn transfer_ftokens<T>(
             recipient,
             amount,
         }
+        // implementation dao token?
         .encode(),
     };
 
