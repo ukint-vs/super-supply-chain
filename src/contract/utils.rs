@@ -1,5 +1,5 @@
 use crate::contract::tx_manager::TransactionGuard;
-use ft_logic_io::Action;
+use ft_logic_io::Action as FTLAction;
 use ft_main_io::{FTokenAction, FTokenEvent};
 use gear_lib::non_fungible_token::{
     io::NFTTransfer,
@@ -82,7 +82,7 @@ pub async fn transfer_ftokens<T>(
 ) -> Result<(), Error> {
     let payload = FTokenAction::Message {
         transaction_id: tx_guard.step()?,
-        payload: Action::Transfer {
+        payload: FTLAction::Transfer {
             sender,
             recipient,
             amount,
