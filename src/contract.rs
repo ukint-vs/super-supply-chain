@@ -109,7 +109,6 @@ struct Contract {
 
     fungible_token: ActorId,
     non_fungible_token: ActorId,
-    oracle: ActorId,
     dao: ActorId,
 }
 
@@ -402,7 +401,6 @@ fn process_init() -> Result<(), Error> {
         retailers,
         fungible_token,
         non_fungible_token,
-        oracle,
         dao,
     } = msg::load()?;
 
@@ -410,7 +408,7 @@ fn process_init() -> Result<(), Error> {
         .iter()
         .chain(&distributors)
         .chain(&retailers)
-        .chain(&[fungible_token, non_fungible_token, oracle, dao])
+        .chain(&[fungible_token, non_fungible_token, dao])
         .any(|actor| actor.is_zero())
     {
         return Err(Error::ZeroActorId);
@@ -427,7 +425,6 @@ fn process_init() -> Result<(), Error> {
                 retailers,
                 fungible_token,
                 non_fungible_token,
-                oracle,
                 dao,
                 ..Default::default()
             },
@@ -725,7 +722,6 @@ extern "C" fn meta_state() -> *mut [i32; 2] {
         StateQuery::ExistingItems => StateReply::ExistingItems(state.items),
         StateQuery::FungibleToken => StateReply::FungibleToken(state.fungible_token),
         StateQuery::NonFungibleToken => StateReply::NonFungibleToken(state.non_fungible_token),
-        StateQuery::Oracle => StateReply::Oracle(state.oracle),
         StateQuery::DAO => StateReply::DAO(state.dao),
         StateQuery::IsActionCached(actor, action) => {
             StateReply::IsActionCached(state.is_action_cached(actor, action))
@@ -744,7 +740,6 @@ fn common_state() -> <ContractMetadata as Metadata>::State {
             retailers,
             fungible_token,
             non_fungible_token,
-            oracle,
             dao,
         },
         tx_manager,
@@ -762,7 +757,6 @@ fn common_state() -> <ContractMetadata as Metadata>::State {
 
         fungible_token: *fungible_token,
         non_fungible_token: *non_fungible_token,
-        oracle: *oracle,
         dao: *dao,
         cached_actions: tx_manager.cached_actions(),
     }

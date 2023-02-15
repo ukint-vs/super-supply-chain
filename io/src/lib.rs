@@ -28,7 +28,6 @@ pub struct State {
 
     pub fungible_token: ActorId,
     pub non_fungible_token: ActorId,
-    pub oracle: ActorId,
     pub dao: ActorId,
 
     /// Used by [`StateQuery::IsActionCached`]. Also see [`TransactionKind`].
@@ -150,8 +149,6 @@ pub struct Initialize {
     pub fungible_token: ActorId,
     /// An NFT contract [`ActorId`].
     pub non_fungible_token: ActorId,
-    /// An Oracle contract [`ActorId`].
-    pub oracle: ActorId,
     /// An Dao contract [`ActorId`].
     pub dao: ActorId,
 }
@@ -616,7 +613,6 @@ pub enum StateQuery {
     ExistingItems,
     FungibleToken,
     NonFungibleToken,
-    Oracle,
     DAO,
     IsActionCached(ActorId, InnerAction),
 }

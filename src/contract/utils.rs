@@ -1,6 +1,4 @@
 use crate::contract::tx_manager::TransactionGuard;
-use oracle_io::{Action as OracleAction, Event as OracleEvent};
-use dao_io::{DaoAction, DaoEvent};
 use ft_logic_io::Action as FTLAction;
 use ft_main_io::{FTokenAction, FTokenEvent};
 use gear_lib::non_fungible_token::{
@@ -97,20 +95,4 @@ pub async fn transfer_ftokens<T>(
     } else {
         Ok(())
     }
-}
-
-pub async fn oracle_action<T>(
-    oracle: ActorId,
-) -> Result<(), Error> {
-    // let payload = OracleAction;
-
-    todo!();
-}
-
-pub async fn dao_action<T>(
-    oracle: ActorId,
-) -> Result<(), Error> {
-    // TODO: implementation dao action
-
-    todo!();
 }
