@@ -1,0 +1,20 @@
+[package]
+name = "randomness-oracle"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["Gear Technologies"]
+readme = "README.md"
+
+[dependencies]
+gstd = { git = "https://github.com/gear-tech/gear.git" }
+async-trait = "0.1.61"
+randomness-oracle-io = { path = "../randomness-oracle-io" }
+
+[dev-dependencies]
+gstd = { git = "https://github.com/gear-tech/gear.git", features = ["debug"] }
+gtest = { git = "https://github.com/gear-tech/gear.git" }
+
+[build-dependencies]
+randomness-oracle-io = { path = "../randomness-oracle-io" }
+gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git" }
