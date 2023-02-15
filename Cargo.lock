@@ -876,6 +876,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "dao-io"
+version = "0.1.0"
+dependencies = [
+ "gmeta",
+ "gstd",
+ "parity-scale-codec",
+ "scale-info",
+]
+
+[[package]]
 name = "darling"
 version = "0.14.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3232,16 +3242,6 @@ name = "openssl-probe"
 version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ff011a302c396a5197692431fc1948019154afc178baf7d8e37367442a4601cf"
-
-[[package]]
-name = "oracle-io"
-version = "0.1.0"
-dependencies = [
- "gmeta",
- "gstd",
- "parity-scale-codec",
- "scale-info",
-]
 
 [[package]]
 name = "output_vt100"
@@ -5941,6 +5941,7 @@ dependencies = [
 name = "supply-chain"
 version = "0.2.0"
 dependencies = [
+ "dao-io",
  "ft-logic-io",
  "ft-main-io",
  "gclient",
@@ -5951,7 +5952,6 @@ dependencies = [
  "gtest",
  "hashbrown 0.13.2",
  "nft-io",
- "oracle-io",
  "parity-scale-codec",
  "pretty_assertions",
  "primitive-types",

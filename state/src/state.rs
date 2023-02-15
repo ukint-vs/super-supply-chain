@@ -30,8 +30,8 @@ pub trait Metawasm {
         state.non_fungible_token
     }
 
-    fn oracle(state: Self::State) -> ActorId {
-        state.oracle
+    fn dao(state: Self::State) -> ActorId {
+        state.dao
     }
 
     fn is_action_cached(actor_action: ActorIdInnerSupplyChainAction, state: Self::State) -> bool {

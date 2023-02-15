@@ -16,7 +16,7 @@ ft-logic-io = { git = "https://github.com/gear-dapps/sharded-fungible-token.git"
 gear-lib = { git = "https://github.com/gear-dapps/gear-lib.git", tag = "0.3.4" }
 scale-info = { version = "2", default-features = false }
 hashbrown = "0.13"
-oracle-io  = { path = "./oracle/io" }
+dao-io = { path = "./dao/io" }
 
 [dev-dependencies]
 gtest = { git = "https://github.com/gear-tech/gear.git", branch = "stable"}
